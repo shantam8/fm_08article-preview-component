@@ -1,11 +1,157 @@
 @import "colors";
 @import "fonts";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
 
+h1,
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+body {
+  background-color: $lightGrayishBlue;
+
+  .card {
+    width: 20.5rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    header {
+      height: 12.5rem;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .cardMain {
+      background-color: white;
+
+      main {
+        padding: 2rem 2rem 1rem 2rem;
+        h1 {
+          color: $veryDarkGrayishBlue;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 13px;
+          color: $desaturatedDarkBlue;
+          line-height: 1.3rem;
+          padding-top: 1.5rem;
+        }
+      }
+
+      footer {
+        padding: 1rem 2rem;
+        background-color: white;
+
+        .user {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas:
+            "image name name share"
+            "image date date share";
+          align-items: center;
+
+          .image {
+            grid-area: image;
+            width: 2.625rem;
+            height: 2.625rem;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+
+          h2 {
+            grid-area: name;
+            color: $veryDarkGrayishBlue;
+            font-size: 0.8rem;
+            font-weight: 700;
+          }
+
+          h3 {
+            grid-area: date;
+            color: $grayishBlue;
+            font-size: 0.7rem;
+            font-weight: 500;
+          }
+
+          .svgBtn {
+            grid-area: share;
+            justify-self: end;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $lightGrayishBlue;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+        }
+
+        .share {
+          display: none;
+          grid-template-columns: repeat(7, 1fr);
+          grid-template-rows: 1fr;
+          grid-template-areas: "shareText shareText facebook twitter pinterest . share";
+          justify-items: center;
+          align-items: center;
+
+          h4 {
+            grid-area: shareText;
+            font-size: 0.7rem;
+            letter-spacing: 0.4rem;
+            font-weight: 500;
+            color: $grayishBlue;
+            text-transform: uppercase;
+          }
+
+          .svgFacebook {
+            grid-area: facebook;
+          }
+          .svgTwitter {
+            grid-area: twitter;
+          }
+          .svgPinterest {
+            grid-area: pinterest;
+            fill: yellowgreen;
+          }
+
+          .svgBtn {
+            grid-area: share;
+            justify-self: end;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $desaturatedDarkBlue;
+            border-radius: 50%;
+            overflow: hidden;
+
+            path {
+              fill: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
