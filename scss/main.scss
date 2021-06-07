@@ -14,6 +14,18 @@ p {
   line-height: 1.5rem;
 }
 
+.svgBtn {
+  grid-area: share;
+  justify-self: end;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 body {
   background-color: $lightGrayishBlue;
 
@@ -25,18 +37,37 @@ body {
     border-radius: 8px;
     overflow: hidden;
 
+    @media screen and (min-width: 1200px) {
+      width: 45.9375rem;
+      margin-top: 16.25rem;
+      display: flex;
+      flex-direction: row;
+    }
+
     header {
       height: 12.5rem;
       width: 100%;
 
+      @media screen and (min-width: 1200px) {
+        width: 18.125rem;
+      }
       img {
         height: 100%;
         width: 100%;
+
+        @media screen and(min-width:1200px) {
+          height: initial;
+          width: 125%;
+        }
       }
     }
 
     .cardMain {
       background-color: white;
+
+      @media screen and (min-width: 1200px) {
+        width: 28rem;
+      }
 
       main {
         padding: 2rem 2rem 1rem 2rem;
@@ -66,6 +97,13 @@ body {
             "image date date share";
           align-items: center;
 
+          @media screen and (min-width: 1200px) {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-areas:
+              "image name name . . share"
+              "image date date . . share";
+          }
+
           .image {
             grid-area: image;
             width: 2.625rem;
@@ -93,20 +131,16 @@ body {
           }
 
           .svgBtn {
-            grid-area: share;
-            justify-self: end;
-            width: 2rem;
-            height: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: $lightGrayishBlue;
-            border-radius: 50%;
-            overflow: hidden;
+
+            @media screen and (min-width: 1200px) {
+              cursor: pointer;
+            }
           }
         }
 
         .share {
+          height: 2.625rem;
           display: none;
           grid-template-columns: repeat(7, 1fr);
           grid-template-rows: 1fr;
@@ -135,16 +169,7 @@ body {
           }
 
           .svgBtn {
-            grid-area: share;
-            justify-self: end;
-            width: 2rem;
-            height: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: $desaturatedDarkBlue;
-            border-radius: 50%;
-            overflow: hidden;
 
             path {
               fill: white;

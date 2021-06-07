@@ -13,6 +13,26 @@ p {
   line-height: 1.5rem;
 }
 
+.svgBtn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+  grid-area: share;
+  justify-self: end;
+  width: 2rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 body {
   background-color: #ecf2f8;
 }
@@ -25,9 +45,29 @@ body .card {
   overflow: hidden;
 }
 
+@media screen and (min-width: 1200px) {
+  body .card {
+    width: 45.9375rem;
+    margin-top: 16.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 body .card header {
   height: 12.5rem;
   width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  body .card header {
+    width: 18.125rem;
+  }
 }
 
 body .card header img {
@@ -35,8 +75,21 @@ body .card header img {
   width: 100%;
 }
 
+@media screen and (min-width: 1200px) {
+  body .card header img {
+    height: initial;
+    width: 125%;
+  }
+}
+
 body .card .cardMain {
   background-color: white;
+}
+
+@media screen and (min-width: 1200px) {
+  body .card .cardMain {
+    width: 28rem;
+  }
 }
 
 body .card .cardMain main {
@@ -71,6 +124,14 @@ body .card .cardMain footer .user {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+  body .card .cardMain footer .user {
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "image name name . . share" "image date date . . share";
+  }
 }
 
 body .card .cardMain footer .user .image {
@@ -110,27 +171,17 @@ body .card .cardMain footer .user h3 {
 }
 
 body .card .cardMain footer .user .svgBtn {
-  -ms-grid-row: 1;
-  -ms-grid-column: 7;
-  grid-area: share;
-  justify-self: end;
-  width: 2rem;
-  height: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: #ecf2f8;
-  border-radius: 50%;
-  overflow: hidden;
+}
+
+@media screen and (min-width: 1200px) {
+  body .card .cardMain footer .user .svgBtn {
+    cursor: pointer;
+  }
 }
 
 body .card .cardMain footer .share {
+  height: 2.625rem;
   display: none;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
@@ -175,24 +226,7 @@ body .card .cardMain footer .share .svgPinterest {
 }
 
 body .card .cardMain footer .share .svgBtn {
-  -ms-grid-row: 1;
-  -ms-grid-column: 7;
-  grid-area: share;
-  justify-self: end;
-  width: 2rem;
-  height: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: #6d7f97;
-  border-radius: 50%;
-  overflow: hidden;
 }
 
 body .card .cardMain footer .share .svgBtn path {
